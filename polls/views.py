@@ -18,7 +18,8 @@ def detail(request, question_id):
 
 def results(request, question_id):
    response = "You're looking at the results of question %s."
-   return HttpResponse(response % question_id)
+   return render(request,'polls/results.html', {'question_id':question_id})
+   #return HttpResponse(response % question_id)
 
 def vote(request, question_id):
    print("Need to add choices and return the vote")
